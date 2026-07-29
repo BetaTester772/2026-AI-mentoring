@@ -1,3 +1,7 @@
 *
 !*.ipynb
 !.gitignore
+!README.md
+!pyproject.toml
+!uv.lock
+!run_notebooks.sh

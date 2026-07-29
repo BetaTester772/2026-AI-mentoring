@@ -1,0 +1,28 @@
+[project]
+name = "ai-mentoring-2026"
+version = "0.1.0"
+description = "6~8주차 PyTorch 이미지 분류 실습 노트북 실행 환경"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "torch>=2.6",
+    "torchvision>=0.21",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "scikit-learn>=1.4",
+    "jupyter>=1.1",
+    "ipykernel>=6.29",
+    "nbconvert>=7.16",
+    "nbformat>=5.10",
+]
+
+[tool.uv]
+# Colab(T4)와 동일하게 CUDA 빌드를 사용합니다. GPU가 없으면 index를 지우고
+# 기본 PyPI 휠(CPU 포함 빌드)로 재설치하면 CPU에서도 그대로 동작합니다.
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
